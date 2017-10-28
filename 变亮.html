@@ -5,18 +5,21 @@
     <title>Title</title>
 </head>
 <body>
-        <script>
-            var a =5;
-            var b = 2;
-            console.log(0/0);
-            console.log(a/0);
-            console.log( 2>3 && console.log("haha"));
-            var c = 123 +"";
-            console.log(typeof(c));
+<input type="button" onclick="disp_prompt()" value="点击输入三个数" />
+<script type="text/javascript">
+    function disp_prompt()
+    {
+        var name=prompt("输入三个数")
+        var tot = name.split(" ");
+       var a =tot[0];
+       var b =tot[1];
+       var c =tot[2];
+       console.log(a);
+        console.log(b);
+        console.log(c);
 
-            var aeg,sex = window.prompt("请输入你的年龄和性别","18","male");
-            console.log(age,sex);
 
-        </script>
+    }
+</script>
 </body>
 </html>
