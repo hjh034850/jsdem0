@@ -52,18 +52,26 @@
 //        }else if(age1>=0 && age1 <14){
 //            alert("您是儿童");
 //        }
-        var today =prompt("请输入星期几");
-      today = parseInt(today);
-      switch (today){
-          case 0: alert("今天是星期天");break;
-          case 1: alert("今天是星期一");break;
-          case 2: alert("今天是星期二");break;
-          case 3: alert("今天是星期三");break;
-          case 4: alert("今天是星期四");break;
-          case 5: alert("今天是星期五");break;
-          case 6: alert("今天是星期六");break;
-          default:alert("输入有误");break;
-      }
+//        var today =prompt("请输入星期几");
+//      today = parseInt(today);
+//      switch (today){
+//          case 0: alert("今天是星期天");break;
+//          case 1: alert("今天是星期一");break;
+//          case 2: alert("今天是星期二");break;
+//          case 3: alert("今天是星期三");break;
+//          case 4: alert("今天是星期四");break;
+//          case 5: alert("今天是星期五");break;
+//          case 6: alert("今天是星期六");break;
+//          default:alert("输入有误");break;
+//      }
+        var j = 1,sum = 0;
+        for(var i = 1;i <=10; i++){
+            j = j * i;
+            sum =sum + j;
+        }
+        document.write(sum);
+
+
 
 
 
