@@ -28,11 +28,40 @@
 //            }else{
 //                console.log(year + "年不是闰年")
 //            }
-        var i,num=1;
-        for(i = 10;i>1;i--){
-            num = num * i;
+//        var i,num=1;
+//        for(i = 10;i>1;i--){
+//            num = num * i;
+//        }
+//    console.log(num);
+        var age = prompt("请输入您的年龄");
+        var age = age * 1;
+        if(age == 0){
+           var age1 = parseInt(age1);
         }
-    console.log(num);
+         if(isNaN(age1) || age1 < 0){
+             alert("请输入有效年龄");
+         }
+        else if(age1 >= 60){
+            alert("您是老年人");
+        }else if(age1 >= 40 && age1 < 60){
+            alert("您是中年人")
+        }else if(age1 > 24 && age1 <40){
+            alert("您是青年人");
+        }else if(age1 >= 14 && age1 <= 24){
+            alert("您是青少年");
+        }else if(age1>=0 && age1 <14){
+            alert("您是儿童");
+        }
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>
