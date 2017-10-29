@@ -32,28 +32,38 @@
 //        for(i = 10;i>1;i--){
 //            num = num * i;
 //        }
-//    console.log(num);
-        var age = prompt("请输入您的年龄");
-        var age = age * 1;
-        if(age == 0){
-           var age1 = parseInt(age1);
-        }
-         if(isNaN(age1) || age1 < 0){
-             alert("请输入有效年龄");
-         }
-        else if(age1 >= 60){
-            alert("您是老年人");
-        }else if(age1 >= 40 && age1 < 60){
-            alert("您是中年人")
-        }else if(age1 > 24 && age1 <40){
-            alert("您是青年人");
-        }else if(age1 >= 14 && age1 <= 24){
-            alert("您是青少年");
-        }else if(age1>=0 && age1 <14){
-            alert("您是儿童");
-        }
-
-
+////    console.log(num);
+//        var age = prompt("请输入您的年龄");
+//        var age = age * 1;
+//        if(age == 0){
+//           var age1 = parseInt(age1);
+//        }
+//         if(isNaN(age1) || age1 < 0){
+//             alert("请输入有效年龄");
+//         }
+//        else if(age1 >= 60){
+//            alert("您是老年人");
+//        }else if(age1 >= 40 && age1 < 60){
+//            alert("您是中年人")
+//        }else if(age1 > 24 && age1 <40){
+//            alert("您是青年人");
+//        }else if(age1 >= 14 && age1 <= 24){
+//            alert("您是青少年");
+//        }else if(age1>=0 && age1 <14){
+//            alert("您是儿童");
+//        }
+        var today =prompt("请输入星期几");
+      today = parseInt(today);
+      switch (today){
+          case 0: alert("今天是星期天");break;
+          case 1: alert("今天是星期一");break;
+          case 2: alert("今天是星期二");break;
+          case 3: alert("今天是星期三");break;
+          case 4: alert("今天是星期四");break;
+          case 5: alert("今天是星期五");break;
+          case 6: alert("今天是星期六");break;
+          default:alert("输入有误");break;
+      }
 
 
 
