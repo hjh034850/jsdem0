@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <script>
+        <script>
 //        var c = "123abe" - "123"
 //        document.write(c);
 //        var d;
@@ -91,6 +91,58 @@
 //            }
 
 
+    //            var x = 8;
+    //            function aa(){
+    //              var  x = 7;
+    //                console.log(x);
+    //            }
+    //            aa();
+    //                console.log(x);
+
+        /*	var a,b,c,x;
+         for(x=1000;x<=9999;x++){
+         a = Math.floor(x/1000);
+         x = x%1000;
+         b = Math.floor(x/100);
+         x = x % 100;
+         c = Math.floor(x/10);
+         x = x + b*100 + a*1000;
+         if(a == (b+c) && x % 13 == 0){
+         console.log(x);
+         }
+         }
+
+         function equation( ){
+         var x =prompt("请输入x的值");
+         var y = 4 * x * x + 3 * x + 2;
+         console.log(y);
+         }
+
+         equation();
+*/
+         function min(){
+         var number = prompt("请输入两个数，以空格隔开");
+         var number1 = number.split(" ");
+         var x = number1[0];
+         var y = number1[1];
+         var min1 = (x>y)?y:x;
+         console.log(min1);
+         }
+
+         min();
+
+
+
+         var a,sum = 0;
+         for(a = 1;a <= 1000;a++) {
+             if (a % 3 == 0 && a % 5 == 0 && a % 7 == 0) {
+                 document.write(a + " ");
+                 sum++;
+                 if (sum % 6 == 0) {
+                     <!--document.write("<br>");-->
+                 }
+             }
+         }
 
 
 
@@ -99,6 +151,7 @@
 
 
 
-    </script>
+
+       </script>
 </body>
 </html>
