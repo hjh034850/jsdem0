@@ -180,11 +180,96 @@
 //                    }
 //                    document.write("<br>");
 //                }
+//            var arr = new Array();
+//            arr[0] = "h";
+//            arr[1] = "e";
+//            arr[2] = "l";
+//            arr[3] = "l";
+//            arr[4] = "o";
+//            arr[5] = " ";
+//            arr[6] = "w";
+//            arr[7] = "o";
+//            arr[8] = "r";
+//            arr[9] = "l";
+//            arr[10] = "d";
+//            alert(arr);
+//            console.log(arr.length);
+//            for(var i = 0;i <arr.length;i++){
+//                console.log(arr[i]);
+//            }
+//                var sum = 0;
+//            for(var i = 1;i <= 1000;i++) {
+//                var a = Math.ceil(Math.random() * 8);
+//                console.log(a);
+//                var b = Math.ceil(Math.random() * 8);
+//                console.log(b);
+//                var c = Math.ceil(Math.random() * 8);
+//                console.log(c);
+//
+//                if (a == 8 || b == 8 || c == 8) {
+//                    console.log("您是幸运用户");
+//                    sum++;
+//                }
+//            }
+//            console.log(sum / 1000);
+//            var cal = function() {
+//                var a = prompt("请输入一个数");
+//                a *= 1;
+//                var b = a * a;
+//                console.log(b);
+//                var c = Math.sqrt(a);
+//                console.log(c);
+//                var d = Math.log(a);
+//                console.log(d);
+//
+//            }
+//            cal();
 
-            var f1 = 1,f2 = 1,n;
-            for(var f3 = 2;f3 <= n;f3++){
-                f3 = f1+f2;
-            }
+
+
+
+//            var number1 = function() {
+//                for(var i = 1;i <= 1000;i++) {
+//                    var a = Math.floor(Math.random() * 101);
+//                    document.write(a + " ");
+//                }
+//            }
+//            number1();
+
+
+                var CollectDigits  = function() {
+                    var s = prompt("请输入一串字符串");
+                    var arr1 = new Array(10);
+                    var arr = s.split("");
+                    console.log(arr);
+                    for (var i = 0; i < arr.length; i++) {
+                        if (!isNaN(parseInt(arr[i]))) {
+                            for (var x = 0; x < arr1.length; x++) {
+                                arr1[x] = arr[i];
+                            }
+                        }
+                    }
+                    console.log(arr1);
+                }
+
+                CollectDigits();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
