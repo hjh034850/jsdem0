@@ -237,23 +237,37 @@
 //            number1();
 
 
-                var CollectDigits  = function() {
-                    var s = prompt("请输入一串字符串");
-                    var arr1 = new Array(10);
-                    var arr = s.split("");
-                    console.log(arr);
-                    for (var i = 0; i < arr.length; i++) {
-                        if (!isNaN(parseInt(arr[i]))) {
-                            for (var x = 0; x < arr1.length; x++) {
-                                arr1[x] = arr[i];
-                            }
-                        }
+//                var CollectDigits  = function() {
+//                    var s = prompt("请输入一串字符串");
+//                    var arr1 = new Array(10);
+//                    var arr = s.split("");
+//                    console.log(arr);
+//                    for (var i = 0; i < arr.length; i++) {
+//                        if (!isNaN(parseInt(arr[i]))) {
+//                            for (var x = 0; x < arr1.length; x++) {
+//                                arr1[x] = arr[i];
+//                            }
+//                        }
+//                    }
+//                    console.log(arr1);
+//                }
+//
+//                CollectDigits();
+
+
+            var CollectDigits = function(){
+                var s = prompt("请输入一串字符串");
+                var result = "";
+                for(var i = 0;i < s.length;i++){
+                    var ch = s.charAt(i);
+                    if(ch >= "0" && ch <= "9"){
+                        result = result + ch;
                     }
-                    console.log(arr1);
+                    console.log(result);
                 }
 
-                CollectDigits();
-
+            }
+            CollectDigits();
 
 
 
