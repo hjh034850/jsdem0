@@ -289,8 +289,22 @@
 //
 //                CollectGrade();
 
-
-
+            var obj = {
+                checkname:function (name) {
+                    if(name == "hujihui")
+                        return name;
+                },
+                checkpassword:function (password) {
+                    if(password == "123456")
+                        return password;
+                }
+            }
+            var a = prompt("请输入您的用户名");
+            if(obj.checkname(a));
+            console.log(a);
+            var b = prompt("请输入您的密码");
+            if(obj.checkpassword(b));
+            console.log(b);
 
 
 
