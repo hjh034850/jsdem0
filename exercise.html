@@ -322,28 +322,23 @@
 //                }
 //            }
 
+//    var person = {
+//        name:"zhangsan",
+//        age:20
+//    }
+//    var person1 = person;
+//    person1.name = "lisi";
+//    console.log(person.name);
 //
-
-
-
-
-
-
-    var person = {
-        name:"zhangsan",
-        age:20
-    }
-    var person1 = person;
-    person1.name = "lisi";
-    console.log(person.name);
-
-        var aa = function(a,b){
-            console.log(arguments);
+//        var aa = function(a,b){
+//            console.log(arguments);
+//        }
+//
+//    aa(1,2,3 );
+        function isLeap(year){
+            return ((year % 4 == 0 && year % 100 != 0)|| year % 400 == 0);
         }
-
-    aa(1,2,3 );
-
-
+        console.log(isLeap(2000));
         </script>
 </body>
 </html>
