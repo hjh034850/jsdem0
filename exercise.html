@@ -321,7 +321,6 @@
 //                }
 //
 //            }
-//
 //                CollectGrade();
 
 //            var obj = {
@@ -356,7 +355,7 @@
 //                    return Fab(n-1) + Fab(n - 2);
 //                }
 //            }
-            function Fab(n){
+           /* function Fab(n){
                 var f1 = 1,f2 = 2,sub ;
                 if(n == 1||n == 2){
                     return 1;
@@ -369,7 +368,15 @@
                     return sub;
                 }
             }
-            console.log(Fab(6));
+            console.log(Fab(6));*/
+          /* function Fab(n){
+               var arr = [1,1];
+               for(var i = 2;i < n;i++){
+                   arr[i] = arr[i-1] + arr[i-2];
+               }
+               return arr[n-1];
+           }*/
+
 //    var person = {
 //        name:"zhangsan",
 //        age:20
@@ -389,9 +396,39 @@
 //        var date = new Date();
 //        var year = date.getFullYear();
 //        console.log(isLeap(year)?"今年是闰年":"今年不是闰年");
+        /*function Merge(s1,s2){
+          var str = "";
+          var length = Math.max(s1.length,s2.length);
+          for(var i = 0;i <length;i++){
+                if(s1.length > i){
+                    str = str + s1[i];
+                }
+              if(s2.length > i){
+                  str = str + s2[i];
+              }
+          }
+          return str;
+        }
+        console.log(Merge("123456","abc"));*/
 
+        var months = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+        function DayOfYear(year,month,day){
+            var sum = 0;
+            if(IsLeapYear){
+                months[1]= 29;
+            }
+            for(var i = 0;i < month-1;i++){
+                sum += months[i];
+            }
+            sum = sum + day;
+            return sum;
 
+        }
+        function IsLeapYear(year){
+            return ((year % 4 == 0 && year % 100 != 0)|| year % 400 == 0);
+        }
 
+        document.write(DayOfYear(2004,5,6));
         </script>
 </body>
 </html>
