@@ -29,7 +29,27 @@
     console.log(aa.concat(bb));*/
 
     var arr = new Array("19",20,"25","35","44","56");
+      /* function add(item){
+           var arr1 = arr.push(item);
+           return arr1;
+       }
+       console.log(add("35"));*/
+      function aa(item){
+          for(var i = 0;i < arr.length;i++){
+              if(arr[i] == item){
+                arr.splice(i,1);
+              }
+          }
+          return arr;
+      }
+      console.log(aa("20"));
+      /*function move(item){
+          for(var i = 0;i < arr.length;i++){
+              if(arr[i] == item){
 
+              }
+          }
+      }*/
     //console.log(arr.join(".."));
    // console.log(arr.pop());
     //console.log(arr);
