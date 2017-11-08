@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #div1{
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+            background: transparent;
+        }
+    </style>
 </head>
 <body>
-        <p>haha</p>
-        <a href="">baidu</a>
-        <div class="div1">daaf</div>
-        <!---->
-<!---->
+    <input type="button" value="变黄" id="color1">
+    <input type="button" value="变绿" id="color2">
+    <input type="button" value="变红" id="color3">
+        <div id="div1"></div>
+<script>
+    var button1 = document.getElementById("color1");
+    console.log(button1);
+    var button2 = document.getElementById("color2");
+    var button3 = document.getElementById("color3");
+    var div11 = document.getElementById("div1");
+    button1.onclick = function(){
+        div11.style.backgroundColor = "yellow";
+    }
+    button2.onclick = function(){
+        div11.style.backgroundColor = "green";
+    }
+    button3.onclick = function(){
+        div11.style.backgroundColor = "red";
+    }
 
-        <script>
-            var de = document.documentElement;
-            var head = de.firstChild;
-            console.log(head);
-            var last = de.lastChild;
-            console.log(last);
 
-        </script>
+</script>
 </body>
 </html>
