@@ -19,18 +19,23 @@
     check("hu2jihui");*/
     //给定字符串 str，检查其是否包含连续重复的字母（a-zA-Z），包含返回 true，否则返回 false。
     //找出数组 arr 中重复出现过的元素
-    var arr = [15,28,15,36,47,38,40];
+    var arr = [15,28,36,47,38,40];
     var arr1 = arr;
+    var sum = 0;
     function checkReaptItem(arr){
-        for(var i = 0;i < arr.length;i++){
-                for(var j = 0;j <arr1.length;j++){
-                    if(arr[i] == arr1[j]){
-                        return true;
-                    }
+        for(var i = 0;i < arr.length;i++) {
+            for (var j = 0; j < arr1.length; j++) {
+                if (arr[i] == arr1[j]) {
+                    sum++;
                 }
-        }
-        return false;
 
+            }
+            if (sum > 1) {
+                return true;
+            }else{
+                return false;
+            }
+        }
 
     }
     console.log(checkReaptItem(arr));
