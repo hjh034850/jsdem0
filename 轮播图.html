@@ -53,6 +53,7 @@
             background: black;
             color: white;
             text-align: center;
+            cursor: pointer;
         }
         #prev-btn{
             left: 10px;
@@ -84,22 +85,34 @@
         var aLi = oTab.getElementsByTagName("li");
         var oImgBox = document.getElementById("img-box");
         var aImg = oImgBox.getElementsByTagName("img");
-        console.log(aLi);
-        console.log(aImg);
-        for(var i = 0;i <aLi.length;i++){
+        var oNext = document.getElementById("next-btn");
+        var iNow = 0;
+        for(var i = 0;i <aLi.length;i++) {
             aLi[i].index = i;
-            aLi[i].onmouseover = function(){
-                    for(var j = 0;j <aLi.length;j++){
-                        aLi[j].className = "";
-                        aImg[j].className = "";
-                    }
-                    this.className = "selected";
+            aLi[i].onmouseover = function () {
+                iNow = this.index;
+                for (var j = 0; j < aLi.length; j++) {
+                    aLi[j].className = "";
+                    aImg[j].className = "";
+                }
+                this.className = "selected";
                 aImg[this.index].className = "selected";
+                return iNow;
             }
-
-
-
+            oNext.onclick = function(){
+                iNow++;
+                if(iNow >= aImg.length){
+                    iNow = 0;
+                }
+                for(var j = 0;j <aLi.length;j++){
+                    aLi[j].className = "";
+                    aImg[j].className = "";
+                }
+                aLi[iNow].className = "selected";
+                aImg[iNow].className = "selected";
+            }
         }
+
 
     </script>
 </body>
