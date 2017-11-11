@@ -81,38 +81,68 @@
         <span id="next-btn">&gt;</span>
     </div>
     <script>
+        var oContainer = document.getElementById("container");
         var oTab = document.getElementById("tab");
         var aLi = oTab.getElementsByTagName("li");
         var oImgBox = document.getElementById("img-box");
         var aImg = oImgBox.getElementsByTagName("img");
+        var oPrev = document.getElementById("prev-btn");
         var oNext = document.getElementById("next-btn");
         var iNow = 0;
+        var timer;
         for(var i = 0;i <aLi.length;i++) {
             aLi[i].index = i;
+
             aLi[i].onmouseover = function () {
                 iNow = this.index;
-                for (var j = 0; j < aLi.length; j++) {
-                    aLi[j].className = "";
-                    aImg[j].className = "";
-                }
-                this.className = "selected";
-                aImg[this.index].className = "selected";
-                return iNow;
-            }
-            oNext.onclick = function(){
-                iNow++;
-                if(iNow >= aImg.length){
-                    iNow = 0;
-                }
-                for(var j = 0;j <aLi.length;j++){
-                    aLi[j].className = "";
-                    aImg[j].className = "";
-                }
-                aLi[iNow].className = "selected";
-                aImg[iNow].className = "selected";
+                changeImg(this.index)
+                //return iNow;
             }
         }
+            oNext.onclick = function() {
+                iNow++;
+                if (iNow >= aImg.length) {
+                    iNow = 0;
+                }
+                changeImg(iNow);
+            }
+            oPrev.onclick = function(){
+                iNow--;
+                if(iNow < 0){
+                    iNow = aImg.length - 1;
+                }
+                changeImg(iNow);
+            }
+            run();
+            oContainer.onmouseover = function(){
+                clearInterval(timer);
+            }
+            oContainer.onmouseout = function(){
+                run();
+            }
 
+        function run(){
+            timer = setInterval(function () {
+                oNext.onclick();
+            }, 1000)
+        }
+
+
+
+
+
+
+
+
+        function changeImg(idx)
+        {
+            for (var j = 0; j < aLi.length; j++) {
+                aLi[j].className = "";
+                aImg[j].className = "";
+            }
+            aLi[idx].className = "selected";
+            aImg[idx].className = "selected";
+        }
 
     </script>
 </body>
