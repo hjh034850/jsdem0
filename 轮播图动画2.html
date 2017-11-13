@@ -48,6 +48,7 @@
             left: 0;
             top: 0;
             opacity: 0;
+            transition: opacity 1s;
         }
         #img-box .active{
             opacity: 1;
@@ -87,11 +88,7 @@
                         aImg[j].className = "";
                     }
                     this.className = "selected";
-                    //aImg[this.index].className = "active";
-                    animate(prevImg, {opacity: 0});
-
-                    animate(aImg[this.index], {opacity: 100});
-                    console.log(aImg[this.index]);
+                    aImg[this.index].className = "active";
                 }
             }
         }
