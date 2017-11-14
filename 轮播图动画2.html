@@ -48,7 +48,7 @@
             left: 0;
             top: 0;
             opacity: 0;
-            transition: opacity 1s;
+            /*transition: opacity 1s;*/
         }
         #img-box .active{
             opacity: 1;
@@ -79,16 +79,22 @@
     var prevImg;
         for(var i = 0;i < aLi.length;i++) {
             aLi[i].index = i;
-
             for (var k = 0; k < aImg.length; k++) {
-                prevImg = aImg[k];
+                prevImg = aImg[0];
                 aLi[i].onmouseover = function () {
                     for (var j = 0; j < aLi.length; j++) {
                         aLi[j].className = "";
                         aImg[j].className = "";
                     }
                     this.className = "selected";
-                    aImg[this.index].className = "active";
+                    //aImg[this.index].className = "active";
+                    animate(prevImg, {opacity: 0});
+                    animate(aImg[this.index], {opacity: 100});
+                    console.log(aImg[this.index].style.zIndex);
+                    console.log(aImg[this.index]);
+
+                    prevImg = aImg[this.index];
+
                 }
             }
         }
