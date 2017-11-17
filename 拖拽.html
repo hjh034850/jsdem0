@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        var oDiv = document.getElementById("div1");
+        oDiv.onmousedown = function(e){
+            e = e || window.event;
+
+            var disX = e.clientX - oDiv.offsetLeft;
+            var disY = e.clientY - oDiv.offsetTop;
+            oDiv.onmousemove = function(e){
+                e = e || e.event;
+                var iLeft = e.clientX - disX;
+                var iTop = e.clientY - disY;
+                oDiv.style.left = iLeft + "px";
+                oDiv.style.top = iTop + "px";
+            }
+        }
+
+    </script>
+</body>
+</html>
