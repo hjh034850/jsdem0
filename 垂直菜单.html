@@ -69,17 +69,17 @@
 </script>-->
 <script>
     var aH2 = document.getElementsByTagName("h2");
-    var flag = false;//false 代表隐藏
+    //false 代表隐藏
     for(var i = 0;i <aH2.length;i++){
+        aH2[i].flag = false;
         aH2[i].onclick = function(){
             var oNext = next(this);
-            console.log(oNext);
-            if(flag){
+            if(this.flag){
                 oNext.style.display = "none";
             }else{
                 oNext.style.display = "block";
             }
-            flag = !flag;
+            this.flag = !this.flag;
         }
     }
 
