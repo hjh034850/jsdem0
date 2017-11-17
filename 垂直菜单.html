@@ -37,7 +37,7 @@
         </ul>
     </li>
     <li>
-        <h2>管理区</h2>
+        <h2>生活区</h2>
         <ul>
             <li>01</li>
             <li>02</li>
@@ -46,7 +46,7 @@
     </li>
 </ul>
 
-<script>
+<!--<script>
     var aH2 = document.getElementsByTagName("h2");
     for(var i = 0;i <aH2.length;i++){
         aH2[i].onclick = function(){
@@ -57,8 +57,29 @@
             }else{
                 oNext.style.display = "none";
             }
+        }
+    }
 
-
+    function next(elem){
+        do{
+            elem = elem.nextSibling;
+        }while (elem && elem.nodeType != 1);
+        return elem;
+    }
+</script>-->
+<script>
+    var aH2 = document.getElementsByTagName("h2");
+    var flag = false;//false 代表隐藏
+    for(var i = 0;i <aH2.length;i++){
+        aH2[i].onclick = function(){
+            var oNext = next(this);
+            console.log(oNext);
+            if(flag){
+                oNext.style.display = "none";
+            }else{
+                oNext.style.display = "block";
+            }
+            flag = !flag;
         }
     }
 
