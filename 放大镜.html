@@ -8,6 +8,9 @@
             margin: 0;
             padding: 0;
         }
+        img{
+            display: block;
+        }
         #small-box{
             position: relative;
             width: 400px;
@@ -52,34 +55,33 @@
     var oDrag = document.getElementById("drag");
     var oBigBox = document.getElementById("big-box");
     var oBigImg = document.getElementById("big-img");
-    oSmallBox.onmouseover = function (e) {
+    oSmallBox.onmouseover = function () {
         oDrag.style.display = "block";
         oBigBox.style.display = "block";
+        oSmallBox.onmousemove();
+    }
         oSmallBox.onmousemove = function(e) {
             e = e || window.event;
-            var disX = e.clientX - oDrag.offsetWidth/2;
-            var disY = e.clientY - oDrag.offsetHeight/2;
+            var disX = e.clientX - oDrag.offsetWidth / 2;
+            var disY = e.clientY - oDrag.offsetHeight / 2;
             var xMax = oSmallBox.offsetWidth - oDrag.offsetWidth;
             var yMax = oSmallBox.offsetHeight - oDrag.offsetHeight;
-            if(disX < 0){
+            if (disX < 0) {
                 disX = 0;
             }
-            if(disX > xMax){
+            if (disX > xMax) {
                 disX = xMax;
             }
-            if(disY < 0){
+            if (disY < 0) {
                 disY = 0;
             }
-            if(disY > yMax){
+            if (disY > yMax) {
                 disY = yMax;
             }
             oDrag.style.left = disX + "px";
             oDrag.style.top = disY + "px";
-
-            oBigImg.style.left = -disX * (oBigImg.offsetWidth/oSmallBox.offsetWidth) + "px";
-            oBigImg.style.top = -disY * (oBigImg.offsetHeight/oSmallBox.offsetHeight) + "px";
-
-        }
+            oBigImg.style.left = -disX * (oBigImg.offsetWidth / oSmallBox.offsetWidth) + "px";
+            oBigImg.style.top = -disY * (oBigImg.offsetHeight / oSmallBox.offsetHeight) + "px";
     }
     oSmallBox.onmouseout = function (e) {
         oDrag.style.display  = "none";
