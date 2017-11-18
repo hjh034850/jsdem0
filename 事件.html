@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        var oDiv = document.getElementById("div1");
+        function addevent(elem,type,fn,flag){
+            if(elem.addEventListener){
+                elem.addEventListener(type,fn,flag);
+            }else{//ie浏览器
+                elem.attachEvent("on"+type,function(){
+                    fn.call(elem);
+                })//绑定事件，this指向window
+            }
+        }
+        addevent(oDiv,"click",function(){
+            alert(this.innerHTML);
+        },false)
+    </script>
+</body>
+</html>
