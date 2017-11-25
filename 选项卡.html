@@ -53,7 +53,7 @@
         <div>ccc</div>
     </div>
 </div>
-<script>
+<!--<script>
     var aLi = document.getElementsByTagName("li");
     var oDiv1 = document.getElementById("div1");
     var aDiv = oDiv1.getElementsByTagName("div");
@@ -69,8 +69,14 @@
             aDiv[this.index].className = "active";
         }
     }
+</script>-->
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $("#ul1 li").on("click",function () {
+        $(this).addClass("selected").siblings().removeClass("selected");
+        $("#div1 div").eq($(this).index()).addClass("active").siblings().removeClass("active");
 
-
+    });
 </script>
 </body>
 </html>
