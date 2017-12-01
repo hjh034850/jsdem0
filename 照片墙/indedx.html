@@ -33,14 +33,15 @@
         <img src="images/9.jpg" alt="">
     </div>
 
+
     <script>
         var oContainer = document.getElementById("container");
         var aImg = document.getElementsByTagName("img");
-        for(var i = 0;i < aImg.length;i++){
 
+
+        for(var i = 0;i < aImg.length;i++){
             aImg[i].style.left = aImg[i].offsetLeft + "px";
             aImg[i].style.top = aImg[i].offsetTop + "px";
-
         }
         for(var j = 0;j < aImg.length;j++){
             aImg[j].style.position = "absolute";
