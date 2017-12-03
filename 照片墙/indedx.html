@@ -18,6 +18,9 @@
             float: left;
             margin: 10px;
         }
+        .collide{
+            border: 1px dotted red;
+        }
     </style>
 </head>
 <body>
@@ -37,6 +40,9 @@
     <script>
         var oContainer = document.getElementById("container");
         var aImg = document.getElementsByTagName("img");
+        var zIndex = 1;
+        var collide = [];
+        var nearElem
 
 
         for(var i = 0;i < aImg.length;i++){
@@ -45,6 +51,88 @@
         }
         for(var j = 0;j < aImg.length;j++){
             aImg[j].style.position = "absolute";
+            aImg[j].style.margin = 0;
+            drag(aImg[j]);
+        }
+
+
+
+
+
+        function drag(elem) {
+            elem.onmousedown = function(e){
+                e = e||window.event;
+                var iDisX = e.clientX - elem.offsetLeft;
+                var iDisY = e.clientY - elem.offsetTop;
+                elem.style.zIndex =  elem.style.zIndex +1;
+                document.onmousemove = function(e){
+                    e = e||window.event;
+                    elem.style.left = e.clientX - iDisX +"px";
+                    elem.style.top = e.clientY - iDisY +"px";
+
+                    collide = [];
+                    //碰撞检测
+                    for(var i = 0;i <aImg.length;i++) {
+                        if (aImg[i] == elem) {
+                            continue;
+                        }
+                        var isCol = checkCollde(elem, aImg[i]);
+                        if (isCol) {
+                            collide.push(aImg[i]);
+                        }
+                        aImg[i].className = "";
+                    }
+                        if(collide.length > 0) {
+                             nearElem = nearest(elem);
+                             nearElem.className = "collide";
+                        }else {
+                            nearElem = null;
+                        }
+
+                    return false;
+                }
+                 document.onmouseup = function(){
+                    document.onmousemove = null;
+                }
+
+            }
+
+
+
+        }
+
+        function checkCollde(elem,target){
+            var elemL = elem.offsetLeft,
+                elemR = elem.offsetLeft + elem.offsetWidth,
+                elemT = elem.offsetTop,
+                elemB = elem.offsetTop + elem.offsetHeight;
+            var targetL = target.offsetLeft,
+                targetR = target.offsetLeft + target.offsetWidth,
+                targetT = target.offsetTop,
+                targetB = target.offsetTop + target.offsetHeight;
+
+            if(elemR < targetL || elemL > targetR || elemB < targetT || elemT > targetB){
+                return false;
+            }else {
+                return true;
+            }
+
+
+        }
+
+        function nearest(elem){
+            var mindis = 999999;
+            var index = 0;
+            for(var i = 0; i <collide.length;i++){
+                var x = collide[i].offsetLeft - elem.offsetLeft;
+                var y = collide[i].offsetTop - elem.offsetTop;
+                var dis = Math.sqrt(x * x + y * y);
+                if(dis < mindis){
+                    mindis = dis;
+                    idnex = i;
+                }
+            }
+            return collide[index];
         }
     </script>
 </body>
