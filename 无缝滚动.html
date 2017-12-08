@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            width: 520px;
+            position: absolute;
+            left: 0;
+        }
+        #container{
+            width: 400px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 150px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        li{
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            margin-right: 10px;
+            background: #000000;
+            color: #ffffff;
+            font-size: 40px;
+            text-align: center;
+            float: left;
+        }
+        #arrrow{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -100px;
+        }
+        #arrrow span{
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            background: #cccccc;
+            text-align: center;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="arrrow">
+            <span>&lt;&lt;向左</span>
+            <span>向右&gt;&gt;</span>
+        </div>
+    </div>
+    <script>
+        var oUl = document.getElementsByTagName("ul")[0];
+        var aLi = document.getElementsByTagName("li");
+        oUl.innerHTML +=oUl.innerHTML;
+        oUl.style.width = (aLi[0].offsetWidth + 10)*8 + "px";
+        setInterval(function(){
+            oUl.style.left = oUl.offsetLeft-2 +"px";
+            if(oUl.offsetLeft <= -oUl.offsetWidth/2){
+                oUl.style.left = "0px";
+            }
+        },30)
+
+
+    </script>
+</body>
+</html>
